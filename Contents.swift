@@ -48,3 +48,21 @@ enum Suit {
 }
 let hearts = Suit.hearts
 let heartsDescription = hearts.simpleDescription()
+
+//
+enum ServerResponse {
+    case result(String, String)
+    case failure(String)
+    
+}
+let success = ServerResponse.result("6:00 am", "8:10 pm")
+let failture = ServerResponse.failure("Out of cheese")
+
+
+switch success {
+case let .result (sunrise, sunset):
+    print("Sunrise is at \(sunrise) and sunset is at \(sunset)")
+case let .failure(message):
+    print("Failure.... \(message)")
+
+}
