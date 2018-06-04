@@ -55,6 +55,8 @@ enum ServerResponse {
     case failure(String)
     
 }
+
+
 let success = ServerResponse.result("6:00 am", "8:10 pm")
 let failture = ServerResponse.failure("Out of cheese")
 
@@ -66,3 +68,13 @@ case let .failure(message):
     print("Failure.... \(message)")
 
 }
+// Use structure to create a structure. Structures support  many of the behaviors as classes
+struct Card {
+    var rank: Rank
+    var suit: Suit
+    func simpleDescription() -> String {
+        return "The \(rank.simpleDescription()) of \(suit.simpleDescription())"
+    }
+}
+let threeOfSpades = Card(rank: .three, suit: .spades)
+let threeOfSpadesDescription = threeOfSpades.simpleDescription()
